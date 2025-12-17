@@ -1,7 +1,15 @@
 services:
   app:
-    image: ghcr.io/${GITHUB_REPOSITORY,,}:latest
-    ports:
-      - "4500:4500"
     environment:
-      - PORT=4500
+      - PORT=80
+    expose:
+      - "80"
+    image: ghcr.io/${GITHUB_REPOSITORY,,}:latest
+    networks:
+      - web
+    ports:
+      - "4500:80"
+
+networks:
+  web:
+    external: true
