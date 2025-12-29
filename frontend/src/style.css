@@ -244,14 +244,6 @@ body {
     align-items: stretch;
   }
 
-  .search {
-    flex-direction: column;
-  }
-
-  .search input {
-    padding: 0.5rem 0.75rem;
-  }
-
   .search button {
     width: 100%;
   }
