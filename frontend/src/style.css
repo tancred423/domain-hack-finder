@@ -222,6 +222,12 @@ body {
   color: var(--accent-color);
 }
 
+.domain__availability {
+  margin-left: 0.5rem;
+  cursor: default;
+  color: var(--accent-color);
+}
+
 .results__message {
   margin: 0;
   color: var(--muted-text);

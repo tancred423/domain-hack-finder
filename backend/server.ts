@@ -18,7 +18,7 @@ function jsonResponse(body: unknown, status = 200) {
   });
 }
 
-function handleApiRequest(url: URL) {
+async function handleApiRequest(url: URL) {
   const query = url.searchParams.get("query") ?? "";
   const trimmed = query.trim();
 
@@ -31,7 +31,7 @@ function handleApiRequest(url: URL) {
     });
   }
 
-  const matches = findDomainHacks(trimmed);
+  const matches = await findDomainHacks(trimmed);
 
   return jsonResponse({
     query,

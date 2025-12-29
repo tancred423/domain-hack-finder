@@ -6,6 +6,7 @@ type DomainHack = {
   host: string;
   left: string;
   tld: string;
+  available: string;
 };
 
 type ThemeOption = 'auto' | 'light' | 'dark';
@@ -160,6 +161,8 @@ function onSubmit(event: Event) {
           <li v-for="item in results" :key="item.host">
             <span class="domain">
               {{ item.left }}<span class="domain__dot">.</span><span class="domain__tld">{{ item.tld }}</span>
+              <span v-if="item.available" class="domain__availability" title="Still available">✔</span>
+              <span v-else class="domain__availability" title="Unavailable">✖</span>
             </span>
           </li>
         </ul>
